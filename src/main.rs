@@ -4,7 +4,27 @@ use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
 
 #[get("/")]
 async fn index() -> impl Responder {
-    let html = include_str!("../templates/index.html");
+    let html = format!(
+        r#"
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta charset="utf-8">
+            <title>Hello World!</title>
+            <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+            <link href="/css/style.css" rel="stylesheet">
+          </head>
+          <body>
+            <div id="app"></div>
+            <script type="module">
+              {}
+            </script>
+          </body>
+        </html>
+        "#,
+        include_str!("../pkg/index.js")
+    );
+    
     HttpResponse::Ok().content_type("text/html").body(html)
 }
 
@@ -25,8 +45,8 @@ async fn main() -> std::io::Result<()> {
             .service(echo)
             .route("/hey", web::get().to(manual_hello))
             .service(actix_files::Files::new("/img", "./static/img"))
-            .service(actix_files::Files::new("/js", "./static/js"))
-            .service(actix_files::Files::new("/css", "./static/css"))
+            .service(actix_files::Files::new("/", "./static/").index_file("index.html"))
+
     })
     .bind(("127.0.0.1", 8080))?
     .run()
