@@ -1,10 +1,7 @@
 +++
 title = "Nightingale Caring Solutions"
 date = 2023-03-01
-type = "Professional"
 +++
-
-## Nightingale Caring Solutions
 ## Machine Learning Engineer
 February, 2023 - Current
 
