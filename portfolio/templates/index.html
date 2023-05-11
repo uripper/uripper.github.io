@@ -1,7 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
+<script src="/js/button.js"></script>
+<link rel="stylesheet" href="{{ get_url(path="index.css") }}">
+
+<div id="fade-to-black"></div>
 <h1 class="title">
-  <img src="../static/images/descriptiontext.png" alt="text">
+  {{ section.title }}
 </h1>
+<body>
+  <div class="background"></div>
+  {{ section.content | safe }}
+  <button> welcome </button>
+</body>
 {% endblock content %}

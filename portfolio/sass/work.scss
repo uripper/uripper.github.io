@@ -1,0 +1,113 @@
+@import "_extend.scss";
+
+$fadeintime: .5s;
+
+$font_family: 'Prompt', sans-serif;
+
+$hover_opacity: 0.7;
+$hover_box_shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 1000px 0 $color3;
+$hover_color: $color6;
+$hover_background: $color5;
+
+$button_background: $color4;
+$button_color: $color10;
+$button_border-radius: 150px;
+$button_padding: 42px;
+$button_font-size: 40px;
+$button_opacity: 50%;
+$button_box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+
+@keyframes fadein_black {
+  0% {
+    z-index: 2;
+    opacity: 1;
+  }
+  25% {
+      z-index: -2;
+  }
+
+  100% {
+    z-index: -2;
+    opacity: .5;
+  }}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }}
+
+@keyframes fadeinImage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: .5;
+  }}
+#fade-to-black {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  z-index: -2; 
+  background: black;
+  animation: fadein_black 2s;
+  opacity: .5;
+  transition: opacity $fadeintime ease-in-out, z-index .01ms ease-in-out;
+}
+#background-image {
+background-image: url("../images/background.png");
+position: absolute;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+z-index: -1;
+background-size: contain;
+background-repeat: random($limit: 10);
+opacity: .5;
+animation: fadeinImage $fadeintime ease-in-out;
+
+}
+
+
+
+h1{
+position: relative;
+top: 0;
+left: 0;
+font-family: $font_family;
+  font-size: 15vh;
+  text-align: top left;
+  color: $color10;
+  opacity: 100%;
+  text-shadow: 5px 5px 2px $color5;
+  animation: fadein $fadeintime ease-in-out;
+  transition: color $fadeintime ease-in, color 1s ease-out, text-shadow $fadeintime ease-in, text-shadow 1s ease-out, opacity 3s ease-in, opacity 1s ease-out; // Add this line
+}
+a{
+    font-family: "Roboto", sans-serif;
+    color: $color10;
+    text-shadow: 3px 2px 2px $color1;
+    align-items: left;
+    text-align: left;
+    border-radius: 50px;
+    text-decoration: none;
+    color-scheme: dark;
+}
+a:hover{
+    color: $color5;
+    text-shadow: 3px 2px 2px $color10;
+}
+ul{
+font-family: $font_family;
+font-size: 5vh;
+align-items: left;
+list-style-type: none;
+animation: fadein $fadeintime ease-in-out;
+transition: opacity $fadeintime ease-in, opacity 1s ease-out;
+}

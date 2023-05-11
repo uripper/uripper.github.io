@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<link rel="stylesheet" href="{{ get_url(path="work.css") }}">
-<div id="fade-to-black"></div>
-
-  <h1 class="title">
-    {{ section.title }}
-  </h1>
-  <div id="background-image">
-  </div>
+<link rel="stylesheet" href="{{ get_url(path="home.css") }}">
+<h1 class="title">
+  {{ section.title }}
+</h1>
 <ul>
   <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->  
+  <li><a href="{{ get_url(path="work") }}"> Work </a></li>
   {% for page in section.pages %}
   <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
   {% endfor %}
 </ul>
+<body>
+    {% block subcontent %}
+    {% endblock subcontent %}
+</body>
 {% endblock content %}
