@@ -60,32 +60,29 @@ $button_box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   transition: opacity $fadeintime ease-in-out, z-index .01ms ease-in-out;
 }
 #background-image {
-background-image: url("../images/background.png");
 position: absolute;
 top: 0;
 left: 0;
 width: 100vw;
 height: 100vh;
 z-index: -1;
-background-size: contain;
-background-repeat: random($limit: 10);
+background-size: cover;
 opacity: .5;
 animation: fadeinImage $fadeintime ease-in-out;
 
 }
 
-
-
+#background-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 h1{
-position: relative;
-top: 0;
-left: 0;
 font-family: $font_family;
-  font-size: 15vh;
-  text-align: top left;
-  color: $color10;
-  opacity: 100%;
-  text-shadow: 5px 5px 2px $color5;
+text-shadow: 2px 2px 2px $color1;
+font-size: 9vh;
+margin-bottom: 0%;
+margin-top: 0%;
   animation: fadein $fadeintime ease-in-out;
   transition: color $fadeintime ease-in, color 1s ease-out, text-shadow $fadeintime ease-in, text-shadow 1s ease-out, opacity 3s ease-in, opacity 1s ease-out; // Add this line
 }

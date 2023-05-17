@@ -1,19 +1,47 @@
+
 {% extends "base.html" %}
 
 {% block content %}
-<link rel="stylesheet" href="{{ get_url(path="home.css") }}">
-<h1 class="title">
-  {{ section.title }}
-</h1>
-<ul>
-  <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->  
-  <li><a href="{{ get_url(path="work") }}"> Work </a></li>
-  {% for page in section.pages %}
-  <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
-  {% endfor %}
-</ul>
+<head>
+  <link rel="stylesheet" href="{{ get_url(path="home.css") }}">
+</head>
 <body>
-    {% block subcontent %}
-    {% endblock subcontent %}
+  <h1 class="title">
+    {{ section.title }}
+  </h1>
+  <ul>
+    <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->
+    <li><a href="{{ get_url(path="work") }}"> Work </a></li>
+    {% for page in section.pages %}
+    <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+    {% endfor %}
+  </ul>
+  <!-- content for the second layer goes here -->
+  <!-- content for the third layer goes here -->
+
+  {% block subcontent %}
+  {% endblock subcontent %}
+  <div class="layer-container">
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+  </div>
 </body>
 {% endblock content %}

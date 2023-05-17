@@ -1,21 +1,19 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     var button = document.querySelector("button");
     var h1 = document.querySelector("h1");
-    var color3 = "rgba(226, 182, 143, 1)";
+    var color3 = "black";
     var color10 = "rgba(193, 221, 198, 1)";
-    var color2 = "rgba(255, 255, 255, 1)";
-    var color4 = "rgba(0, 0, 0, 1)";
     var current_website = window.location.href;
 
     button.addEventListener("mouseover", function( event ) {   
         h1.style.color = color10;
-        h1.style.textShadow = "5px 5px 2px rgba(226, 182, 143, 1)";
+        h1.style.textShadow = "5px 5px 2px " + color3;
         h1.style.opacity = "0.7";
     });
 
     button.addEventListener("mouseout", function( event ) {   
         h1.style.color = color3;
-        h1.style.textShadow = "5px 5px 2px rgba(193, 221, 198, 1)";
+        h1.style.textShadow = "5px 5px 4px " + color10;
         h1.style.opacity = "1";
     });
     button.addEventListener("mousedown", function( event ) {

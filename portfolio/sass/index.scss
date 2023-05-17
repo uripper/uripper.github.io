@@ -7,11 +7,13 @@ $hover_box_shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 1000px 0 $color3;
 $hover_color: $color6;
 $hover_background: $color5;
 
+$name_size: 15vh;
+
 $button_background: $color4;
 $button_color: $color10;
-$button_border-radius: 150px;
-$button_padding: 42px;
-$button_font-size: 40px;
+$button_border-radius: 20 * $name_size;
+$button_font-size: .5*$name_size;
+$button_padding: .25*$name_size;
 $button_opacity: 50%;
 $button_box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 
@@ -108,10 +110,9 @@ h1{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10vh;
   text-align: center;
-  font-size: 100px;
-  color: $color3;
+  font-size: $name_size;
+  color: black;
   opacity: 100%;
   text-shadow: 5px 5px 2px $color10;
   transition: color 3s ease-in, color 1s ease-out, text-shadow 3s ease-in, text-shadow 1s ease-out, opacity 3s ease-in, opacity 1s ease-out; // Add this line

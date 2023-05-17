@@ -1,72 +1,68 @@
 @import "_extend.scss";
 
+$turrel_black:rgb(6,4,8);
+$turrel_purple: rgb(134,24,174);
+$turrel_pink: rgb(215,47,137);
+$turrel_blue_purple: rgb(103,57,244);
+$turrel_lavender: rgb(139,120,251);
+$turrel_aztec_brown: rgb(158,33,76);
+$turrel_blue: rgb(68,75,252);
+$turrel_earth_brown: rgb(172,60,36);
+$turrel_dark_purple:rgb(111,68,218);
+
+$my_white: rgb(235, 215, 226);
+
 $font_family: 'Prompt', sans-serif;
 
-$hover_opacity: 0.7;
-$hover_box_shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 1000px 0 $color3;
-$hover_color: $color6;
-$hover_background: $color5;
+$grad_red_to_blue: linear-gradient(to bottom, $turrel_aztec_brown, $turrel_blue);
+$grad_lime_to_azul: linear-gradient(to bottom, $turrel_pink, $turrel_lavender);
+$grad_purple_to_green: linear-gradient(to bottom, $turrel_dark_purple, $turrel_blue_purple); 
 
-$button_background: $color4;
-$button_color: $color10;
-$button_border-radius: 150px;
-$button_padding: 42px;
-$button_font-size: 40px;
-$button_opacity: 50%;
-$button_box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-
-
-@keyframes pulse {
+@keyframes crtCrackle {
   0% {
-    background-size: 0%;
-  }
-  50% {
-    background-size: 500%;
+    background-position: 0 0;
   }
   100% {
-    background-size: 0%;
+    background-position: 8px 2px;
   }
-
 }
-
-@keyframes text_pulsate {
+@keyframes slideToBack {
+  from {
+    transform: translateZ(0px) scale(1);
+  }
+  to {
+    transform: translateZ(-900px) scale(0);
+  }
+}
+@keyframes lensEffect {
   0% {
-    color:$color3;
-    text-shadow: 5px 2px 2px $color5;
-
-  }
-  25% {
-    color: $color6;
-    text-shadow: 2px 2px 5px $color4;
-
-  }
-  50% {
-    color:$color5;
-    text-shadow: 2px 5px 2px $color3;
-
-  }
-  75% {
-    color: $color10;
-    text-shadow: 5px 2px 2px $color2; 
+    transform: perspective(500px) rotateY(0deg);
   }
   100% {
-    color:$color3;
-    text-shadow: 5px 2px 2px $color5;
-
+    transform: perspective(500px) rotateY(-60deg);
   }
 }
-@keyframes shadow_split{
-  0%{
-    font-size: 80px;
-    text-shadow:10px, 10px, 10px, rgba(226, 182, 143, .87);
+
+@keyframes waveUnderline {
+  0% { text-decoration-color: $turrel_blue_purple; }
+  20% { text-decoration-color: $turrel_purple; }
+  50% { text-decoration-color: $turrel_pink; }
+  80% { text-decoration-color: $turrel_blue; }
+  100% { text-decoration-color: $turrel_blue_purple; }
+}
+
+@keyframes darken {
+  0% {
+    opacity: .3;
   }
-  50%{
-    font-size: 100px;
-    text-shadow:2px, 5px, 5px, rgba(226, 182, 143, .87);
+  50% {
+    opacity: .01;
   }
-  100%{
-    font-size: 80px;
-    text-shadow:0px, 0px, 0px, 5px;
+  85% {
+    opacity: .00001;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
@@ -78,7 +74,8 @@ $button_box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   to {
     z-index: -1;
     opacity: 0;
-  }}
+  }
+}
 
 #fade-to-black {
   position: fixed; 
@@ -93,66 +90,174 @@ $button_box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   transition: opacity 1s ease-in-out, z-index 0.1ms ease-in-out;
 }
 
-.background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  animation: pulse 30000s linear infinite;
-  background: radial-gradient(ellipse, black, $color8);
-  opacity: 100%;
-}
 h1{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10vh;
+  margin: 0;
+  justify-content: left;
+  align-items: top;
   text-align: center;
-  font-size: 100px;
-  color: $color3;
+  font-size: 13vh;
+  font-family: "Noto Sans Mono";
+  color: $turrel_black;
   opacity: 100%;
-  text-shadow: 5px 5px 2px $color10;
-  transition: color 3s ease-in, color 1s ease-out, text-shadow 3s ease-in, text-shadow 1s ease-out, opacity 3s ease-in, opacity 1s ease-out; // Add this line
+  text-shadow: 5px 6px 8px $color8;
+  transition: color 3s ease-in, color 1s ease-out, text-shadow 3s ease-in, text-shadow 1s ease-out, opacity 3s ease-in, opacity 1s ease-out;
 }
-body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+
+body {
+  margin-top: 0%;
+  background-size: cover;
+  background-position: top;
+  background-color: $turrel_black;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.layer {
+  position: absolute;
+  top:0;
+  left:0;
   height: 100vh;
-  animation-fill-mode: backwards;
-  font-family: $font_family;  
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 5em;
+  color: $color8;
+  text-shadow: 0 0 5px rgba(0,0,0,0.1);
+  z-index: -5;
+  
+  
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: inherit;
+    pointer-events: none;
+    animation: darken 2s steps(10) infinite alternate-reverse;
+  }
 
-}
-button {
-  background: $button_background;
-  color: $button_color;
-  border-radius: $button_border-radius;
-  padding: $button_padding;
-  font-size: $button_font-size;
-  font-family: $font_family;
-  opacity: $button_opacity;
-  box-shadow: $button_box_shadow;  
-  transition: opacity 3s ease-in, color 3s ease-in, background 3s ease-in, box-shadow 5s ease-in, opacity 1s ease-out, color 1s ease-out, background 1s ease-out, box-shadow 1s ease-out;
-}
+  &:nth-child(1) {
+    background: linear-gradient(to bottom, $turrel_purple, $turrel_blue);
+    box-shadow: inset 0 0 200px rgba(0,0,0,0.5);
+    transform: scale(1);
+  }
 
-button:hover {
-  opacity: $hover_opacity;
-  color: $hover_color;
-  background: $hover_background;
-  box-shadow: $hover_box_shadow;
-}
+  &:nth-child(2) {
+    background: linear-gradient(to bottom, $turrel_pink, $turrel_aztec_brown);
+    box-shadow: inset 0 0 400px rgba(0,0,0,0.5);
+    transform: scale(0.9);
+    transform-origin: bottom;
+  }
 
-button:not(:hover) {
-  color: $button_color;
-  background: $button_background;
-  box-shadow: $button_box_shadow;
+  &:nth-child(3) {
+    background: linear-gradient(to bottom, $turrel_blue, $turrel_blue_purple);
+    box-shadow: inset 0 0 500px rgba(0,0,0,0.5);
+    transform: scale(0.8);
+    transform-origin: bottom;
+  }
+
+  &:nth-child(4) {
+    background: linear-gradient(to bottom, $turrel_dark_purple, $turrel_lavender);
+    box-shadow: inset 0 0 600px rgba(0,0,0,0.5);
+    transform: scale(0.7);
+    transform-origin: bottom;
+  }
+
+  &:nth-child(5) {
+    background: linear-gradient(to bottom, $turrel_purple, $turrel_aztec_brown);
+    box-shadow: inset 0 0 700px rgba(0,0,0,0.5);
+    transform: scale(0.6);
+    transform-origin: bottom;
+  }
+  &:nth-child(6){
+    background: linear-gradient(to bottom, $turrel_pink, $turrel_blue_purple);
+    box-shadow: inset 0 0 800px rgba(0,0,0,0.5);
+    transform: scale(0.5);
+    transform-origin: bottom;
+  }
+  &:nth-child(7){
+    background: linear-gradient(to bottom, $turrel_blue, $turrel_lavender);
+    box-shadow: inset 0 0 900px rgba(0,0,0,0.5);
+    transform: scale(0.4);
+    transform-origin: bottom;
+  }
+  &:nth-child(8){
+    background: linear-gradient(to bottom, $turrel_blue, $turrel_purple);
+    box-shadow: inset 0 0 1000px rgba(0,0,0,0.5);
+    transform: scale(0.3);
+    transform-origin: bottom;
+  }
+  &:nth-child(9){
+    background: linear-gradient(to bottom, $turrel_aztec_brown, $turrel_pink);
+    box-shadow: inset 0 0 1100px rgba(0,0,0,0.5);
+    transform: scale(0.2);
+    transform-origin: bottom;
+  }
+  &:nth-child(10){
+    background: linear-gradient(to bottom, $turrel_blue_purple, $turrel_blue);
+    box-shadow: inset 0 0 1200px rgba(0,0,0,0.5);
+    transform: scale(0.1);
+    transform-origin: bottom;
+  }
+  &:nth-child(11){
+    background: linear-gradient(to bottom, $turrel_lavender, $turrel_dark_purple);
+    box-shadow: inset 0 0 1300px rgba(0,0,0,0.5);
+    transform: scale(0.05);
+    transform-origin: bottom;
+  }
+  &:nth-child(12){
+    background: linear-gradient(to bottom, $turrel_aztec_brown, $turrel_pink);
+    box-shadow: inset 0 0 1400px rgba(0,0,0,0.5);
+    transform: scale(0.025);
+    transform-origin: bottom;
+  }
+  &:nth-child(13){
+    background: linear-gradient(to bottom, rgb(215,47,137), rgb(103,57,244));
+    box-shadow: inset 0 0 1500px rgba(0,0,0,0.5);
+    transform: scale(0.0125);
+    transform-origin: bottom;
+  }
+  &:nth-child(14){
+    background: linear-gradient(to bottom, rgb(158,33,76), rgb(68,75,252));
+    box-shadow: inset 0 0 1600px rgba(0,0,0,0.5);
+    transform: scale(0.00625);
+    transform-origin: bottom;
+  }
+  &:nth-child(15){
+    background: linear-gradient(to bottom, rgb(215,47,137), rgb(103,57,244));
+    box-shadow: inset 0 0 1700px rgba(0,0,0,0.5);
+    transform: scale(0.003125);
+    transform-origin: bottom;
+  }
+  &:nth-child(16){
+    background: linear-gradient(to bottom, rgb(158,33,76), rgb(68,75,252));
+    box-shadow: inset 0 0 1800px rgba(0,0,0,0.5);
+    transform: scale(0.0015625);
+    transform-origin: bottom;
+  }
 }
-button:active {
-  color: $color5;
-  background: $color6;
-  box-shadow: 0px 0px 20px white;
-  opacity: 100%;
+a{
+  margin-left: 10vw;
+  text-decoration: underline;
+  text-decoration-color: $grad_lime_to_azul;
+  text-decoration-style: wavy;
+  color: $my_white;
+  font-size: 11vh;
+  font-family: 'Pathway Gothic One';
+  text-shadow: 5px 6px 2px $turrel_blue_purple;
+  animation: waveUnderline 10s linear infinite alternate;
+}
+ul{
+  list-style: none;
+}
+a:hover{
+  color: $turrel_pink;
 }
