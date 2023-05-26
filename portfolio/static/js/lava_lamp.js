@@ -1,4 +1,4 @@
-import * as p5 from "p5";
+import * as p5 from "../node_modules/p5/lib/p5.js";
 var Blob = /** @class */ (function () {
     function Blob(p) {
         this.x = Math.random() * p.windowWidth;

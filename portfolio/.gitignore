@@ -1,6 +1,4 @@
-public/
-.idea
-.DS_Store
-./**/.DS_Store
-node_modules/**
-**/p5/**
+package-lock.json
+package.json
+node_modules/*
+.vscode
