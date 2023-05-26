@@ -12,9 +12,11 @@ $turrel_earth_brown: rgb(172,60,36);
 $turrel_dark_purple:rgb(111,68,218);
 
 $my_white: rgb(207, 190, 245);
-$my_black: rgb(41, 78, 62)
+$my_gray: rgb(175, 153, 153);
+$my_black: rgb(41, 78, 62);
 
-$font_family: 'Prompt', sans-serif;
+$font_family: 'Monomaniac One', sans-serif;
+$text_font_family: 'Bebas Neue', sans-serif;
 
 $grad_red_to_blue: linear-gradient(to bottom, $turrel_aztec_brown, $turrel_blue);
 $grad_lime_to_azul: linear-gradient(to bottom, $turrel_pink, $turrel_lavender);
@@ -90,21 +92,22 @@ h1{
   justify-content: left;
   align-items: top;
   text-align: center;
-  font-size: 13vh;
-  font-family: "Noto Sans Mono";
-  color: $my_white
+  font-size: 17vh;
+  font-family: $font_family;
+  color: $my_white;
   opacity: 100%;
-  text-shadow: 3px 5px 1px rgb(41, 78, 62);
+  text-shadow: -4px 2px 1px $my_black;
   transition: color 3s ease-in, color 1s ease-out, text-shadow 3s ease-in, text-shadow 1s ease-out, opacity 3s ease-in, opacity 1s ease-out;
 }
 
 body {
+  margin: 0;
   margin-top: 0%;
+  margin-left: 0%;
   background-size: cover;
   background-position: top;
   background-color: $turrel_black;
   perspective: 1px;
-  transform-style: preserve-3d;
   overflow-x: hidden;
   overflow-y: hidden;
   position: relative;
@@ -115,7 +118,8 @@ body {
   position: absolute;
   top:0;
   left:0;
-  height: 100vh;
+  bottom: 0;
+  height: 120vh;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -240,10 +244,11 @@ body {
   }
 }
 a{
-  margin-left: 10vw;
-  color: $my_white;
-  font-size: 11vh;
-  font-family: 'Pathway Gothic One';
+  margin-top: 12vh;
+  margin-left: 7vw;
+  color: $my_gray;
+  font-size: 8vh;
+  font-family: $text_font_family;
   text-shadow: 3px 1px 2px $my_black;
   text-decoration-color: $my_black;
   text-decoration-line: underline;

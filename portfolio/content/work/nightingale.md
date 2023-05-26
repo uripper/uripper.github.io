@@ -18,19 +18,19 @@ As a Machine Learning Engineer at Nightingale Caring Solutions,
 
 a startup focused on using cutting-edge technology to improve 
 
-patient outcomes in the healthcare industry, I have had 
+patient outcomes in the healthcare industry, I have had the
 
-the opportunity to work on a variety of projects. My primary 
+opportunity to work on a variety of projects. My primary role 
 
-role involves developing and implementing advanced machine 
+involves developing and implementing advanced machine learning 
 
-learning algorithms to solve complex problems in the healthcare
+algorithms to solve complex problems in the healthcare setting. 
 
-setting. In addition to my work in machine learning, I have also 
+In addition to my work in machine learning, I have also contributed
 
-contributed to projects involving API development, data science, 
+to projects involving API development, data science, database 
 
-database engineering, and more.
+engineering, and more.
 
 
 /\\/\\/\\/\\/\\/\\/\\/\\
