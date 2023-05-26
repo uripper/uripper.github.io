@@ -1,34 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% set ipad = resize_image(path="images/background.png", width=768, height=1024) %}
-{% set iphone = resize_image(path="images/background.png", width=414, height=896) %}
-{% set nexus = resize_image(path="images/background.png", width=800, height=1280) %}
-{% set lap = resize_image(path="images/background.png", width=1024, height=768) %}
-{% set lap13 = resize_image(path="images/background.png", width=1280, height=800) %}
-{% set lap15 = resize_image(path="images/background.png", width=1366, height=768) %}
-{% set mon19 = resize_image(path="images/background.png", width=1440, height=900) %}
-{% set mon1080 = resize_image(path="images/background.png", width=1920, height=1080) %}
-{% set mon1080half = resize_image(path="images/background.png", width=1920, height=540) %}
-{% set mon4k = resize_image(path="images/background.png", width=3840, height=2160) %}
-{% set mon4khalf = resize_image(path="images/background.png", width=1920, height=2160) %}
-
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
 <link rel="stylesheet" href="{{ get_url(path="work.css") }}">
-<div id="fade-to-black"></div>
-
+<div class="background"></div>
   <h1 class="title">
     {{ section.title }}
+    <div class="header-box"></div>
   </h1>
-  <div id="background-image">
-    <img src="images/background.png" alt="Your image" class="lazyload" datasrcset="{{ ipad }} 1x, {{ iphone }} 2x  {{ nexus }} 3x {{ lap }} 4x, {{ lap13 }} 5x, {{ lap15 }} 6x, {{ mon19 }} 7x, {{ mon1080 }} 8x, {{ mon1080half }} 9x, {{ mon4k }} 10x, {{ mon4khalf }} 11x" data-sizes="auto"" />
-  </div>
-<ul>
-  <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->  
-  {% for page in section.pages %}
-  <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
-  {% endfor %}
-</ul>
-{% endblock content %}
+  <ul>
+    <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->  
+    {% for page in section.pages %}
+    <li>
+      <a href="{{ page.permalink | safe }}">{{ page.title }}
+      </a>
+      <div class="text-box"></div>
+    </li>
+    {% endfor %}
+  </ul>
+
+  {% endblock content %}

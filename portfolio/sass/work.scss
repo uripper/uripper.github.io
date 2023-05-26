@@ -2,109 +2,94 @@
 
 $fadeintime: .5s;
 
-$font_family: 'Prompt', sans-serif;
+$header_text_color: #9cb29e;
+$header_box_color: #000000;
+
+$body_text_color: #000000;
+$body_box_color: #9cb29e;
+
+
+$header_font: 'Rajdhani';
+$body_font: 'Righteous';
 
 $hover_opacity: 0.7;
-$hover_box_shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 1000px 0 $color3;
+$hover_box_shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+0 6px 1000px 0 $color3;
 $hover_color: $color6;
 $hover_background: $color5;
+$header_box_size: 3rem;
+$header_font_size: 3rem;
+$link-size: 1rem;
 
-$button_background: $color4;
-$button_color: $color10;
-$button_border-radius: 150px;
-$button_padding: 42px;
-$button_font-size: 40px;
-$button_opacity: 50%;
-$button_box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-
-
-@keyframes fadein_black {
-  0% {
-    z-index: 2;
-    opacity: 1;
-  }
-  25% {
-      z-index: -2;
-  }
-
-  100% {
-    z-index: -2;
-    opacity: .5;
-  }}
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }}
-
-@keyframes fadeinImage {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: .5;
-  }}
-#fade-to-black {
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100%; 
-  z-index: -2; 
-  background: black;
-  animation: fadein_black 2s;
-  opacity: .5;
-  transition: opacity $fadeintime ease-in-out, z-index .01ms ease-in-out;
-}
-#background-image {
-position: absolute;
-top: 0;
-left: 0;
-width: 100vw;
-height: 100vh;
-z-index: -1;
-background-size: cover;
-overflow: hidden;
-animation: fadeinImage $fadeintime ease-in-out;
-
+:root{
+  font-size: calc(max(3vh, 3vw));
 }
 
-#background-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+body {
+  background-color: #000000;
 }
-h1{
-font-family: $font_family;
-text-shadow: 2px 2px 2px $color1;
-font-size: 9vh;
-margin-bottom: 0%;
-margin-top: 0%;
+.header-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  width: calc(#{$header_box_size}*8);
+  height: $header_box_size;
+  background-color: $header_box_color;
+}
+
+h1 {
+  position: relative;
+  font-family: $header_font;
+  color: $header_text_color;
+  font-size: $header_font_size;
+  text-align: center;
+  margin-left: 0%;
+  margin-right: 0%;
+  z-index: 1;
   animation: fadein $fadeintime ease-in-out;
   transition: color $fadeintime ease-in, color 1s ease-out, text-shadow $fadeintime ease-in, text-shadow 1s ease-out, opacity 3s ease-in, opacity 1s ease-out; // Add this line
 }
-a{
-    font-family: "Roboto", sans-serif;
-    color: $color10;
-    text-shadow: 3px 2px 2px $color1;
-    align-items: left;
-    text-align: left;
-    border-radius: 50px;
-    text-decoration: none;
-    color-scheme: dark;
+
+a {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  margin: auto;
+  border: .125rem solid $body_box_color;
+  font-family: $body_font;
+  color: $body_text_color;
+  font-size: $link-size;
+  z-index: 5;
+  background-color: $body_box_color;
 }
 a:hover{
-    color: $color5;
-    text-shadow: 3px 2px 2px $color10;
+  color: $hover_color;
 }
-ul{
-font-family: $font_family;
-font-size: 5vh;
-align-items: left;
-list-style-type: none;
-animation: fadein $fadeintime ease-in-out;
-transition: opacity $fadeintime ease-in, opacity 1s ease-out;
+
+div {
+  text-align: center;
+}
+ul {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-family: $body_font;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+li{
+  text-align: left;
+  width: 15em;
+  margin-right: 5%;
+}
+img {
+  position: flex;
+  width: 100%;
+  align-content: flex-end;
 }
