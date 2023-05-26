@@ -1,12 +1,13 @@
 @import "_extend.scss";
 
 $fadeintime: .5s;
+$background_color: #20151E;
 
 $header_text_color: #9cb29e;
-$header_box_color: #000000;
+$header_box_color: #83A2CD;
 
-$body_text_color: #000000;
-$body_box_color: #9cb29e;
+$body_text_color: #5E8F8B;
+$body_box_color: #EA9AA2;
 
 
 $header_font: 'Rajdhani';
@@ -26,20 +27,7 @@ $link-size: 1rem;
 }
 
 body {
-  background-color: #000000;
-}
-.header-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: -1;
-  transform: translate(-50%, -50%);
-  width: calc(#{$header_box_size}*8);
-  height: $header_box_size;
-  background-color: $header_box_color;
+  background-color: $background_color;
 }
 
 h1 {
@@ -60,15 +48,13 @@ a {
   justify-content: left;
   align-items: left;
   margin: auto;
-  border: .125rem solid $body_box_color;
   font-family: $body_font;
   color: $body_text_color;
   font-size: $link-size;
   z-index: 5;
-  background-color: $body_box_color;
 }
 a:hover{
-  color: $hover_color;
+  color: $body_box_color;
 }
 
 div {
@@ -87,9 +73,4 @@ li{
   text-align: left;
   width: 15em;
   margin-right: 5%;
-}
-img {
-  position: flex;
-  width: 100%;
-  align-content: flex-end;
 }
