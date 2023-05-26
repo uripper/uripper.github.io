@@ -1,74 +1,14 @@
 @import "_extend.scss";
 
-$font_family: 'Prompt', sans-serif;
+$text_color: #80FFCC;
+$background_color: #050000;
+$header_color: #b5d1cc;
+$accent_color: #ABF5ED;
+$shadow_color: #ff3319;
 
-$hover_opacity: 0.7;
-$hover_box_shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 1000px 0 $color3;
-$hover_color: $color6;
-$hover_background: $color5;
+$font_family: 'Press Start 2P', sans-serif;
+$header_font_family: 'Press Start 2P', sans-serif;
 
-$button_background: $color4;
-$button_color: $color10;
-$button_border-radius: 150px;
-$button_padding: 42px;
-$button_font-size: 40px;
-$button_opacity: 50%;
-$button_box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-
-
-@keyframes pulse {
-  0% {
-    background-size: 0%;
-  }
-  50% {
-    background-size: 500%;
-  }
-  100% {
-    background-size: 0%;
-  }
-
-}
-
-@keyframes text_pulsate {
-  0% {
-    color:$color3;
-    text-shadow: 5px 2px 2px $color5;
-
-  }
-  25% {
-    color: $color6;
-    text-shadow: 2px 2px 5px $color4;
-
-  }
-  50% {
-    color:$color5;
-    text-shadow: 2px 5px 2px $color3;
-
-  }
-  75% {
-    color: $color10;
-    text-shadow: 5px 2px 2px $color2; 
-  }
-  100% {
-    color:$color3;
-    text-shadow: 5px 2px 2px $color5;
-
-  }
-}
-@keyframes shadow_split{
-  0%{
-    font-size: 80px;
-    text-shadow:10px, 10px, 10px, rgba(226, 182, 143, .87);
-  }
-  50%{
-    font-size: 100px;
-    text-shadow:2px, 5px, 5px, rgba(226, 182, 143, .87);
-  }
-  100%{
-    font-size: 80px;
-    text-shadow:0px, 0px, 0px, 5px;
-  }
-}
 
 @keyframes fadein {
   from {
@@ -78,7 +18,8 @@ $button_box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   to {
     z-index: -1;
     opacity: 0;
-  }}
+  }
+}
 
 #fade-to-black {
   position: fixed; 
@@ -93,66 +34,30 @@ $button_box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   transition: opacity 1s ease-in-out, z-index 0.1ms ease-in-out;
 }
 
-.background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  animation: pulse 30000s linear infinite;
-  background: radial-gradient(ellipse, black, $color8);
-  opacity: 100%;
-}
 h1{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10vh;
+  margin: 0;
+  justify-content: left;
+  align-items: top;
   text-align: center;
-  font-size: 100px;
-  color: $color3;
+  font-size: 4vw;
+  font-family: $header_font_family;
+  color: $header_color;
   opacity: 100%;
-  text-shadow: 5px 5px 2px $color10;
-  transition: color 3s ease-in, color 1s ease-out, text-shadow 3s ease-in, text-shadow 1s ease-out, opacity 3s ease-in, opacity 1s ease-out; // Add this line
+  text-shadow: 1px 1px 1px $shadow_color;
+  transition: color 3s ease-in, color 1s ease-out, text-shadow 3s ease-in, text-shadow 1s ease-out, opacity 3s ease-in, opacity 1s ease-out;
 }
-body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 100vh;
-  animation-fill-mode: backwards;
-  font-family: $font_family;  
 
-}
-button {
-  background: $button_background;
-  color: $button_color;
-  border-radius: $button_border-radius;
-  padding: $button_padding;
-  font-size: $button_font-size;
+body {
+  margin-top: 0%;
+  background-size: cover;
+  background-position: top;
+  background-color: $background_color;
+  position: relative;
+  text-shadow: 1px 3px 2px $shadow_color;
+  z-index: 1;
+  overflow-x: hidden;
+  color: $text_color;
+  font-size: 1vw;
   font-family: $font_family;
-  opacity: $button_opacity;
-  box-shadow: $button_box_shadow;  
-  transition: opacity 3s ease-in, color 3s ease-in, background 3s ease-in, box-shadow 5s ease-in, opacity 1s ease-out, color 1s ease-out, background 1s ease-out, box-shadow 1s ease-out;
-}
 
-button:hover {
-  opacity: $hover_opacity;
-  color: $hover_color;
-  background: $hover_background;
-  box-shadow: $hover_box_shadow;
-}
-
-button:not(:hover) {
-  color: $button_color;
-  background: $button_background;
-  box-shadow: $button_box_shadow;
-}
-button:active {
-  color: $color5;
-  background: $color6;
-  box-shadow: 0px 0px 20px white;
-  opacity: 100%;
 }

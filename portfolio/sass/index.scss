@@ -104,6 +104,7 @@ $button_box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   z-index: -1;
   animation: pulse 30000s linear infinite;
   background: radial-gradient(ellipse, black, $color8);
+  overflow: hidden;
   opacity: 100%;
 }
 h1{
@@ -123,6 +124,8 @@ body{
   align-items: center;
   text-align: center;
   height: 100vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
   animation-fill-mode: backwards;
   font-family: $font_family;  
 

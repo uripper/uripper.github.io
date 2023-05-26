@@ -68,6 +68,7 @@ height: 100vh;
 z-index: -1;
 background-size: cover;
 opacity: .5;
+overflow: hidden;
 animation: fadeinImage $fadeintime ease-in-out;
 
 }

@@ -2,7 +2,8 @@
 
 $turrel_black:rgb(6,4,8);
 $turrel_purple: rgb(134,24,174);
-$turrel_pink: rgb(215,47,137);
+$turrel_pink: #d72f89;
+$emerald: rgba(47, 215, 125, 0.9);
 $turrel_blue_purple: rgb(103,57,244);
 $turrel_lavender: rgb(139,120,251);
 $turrel_aztec_brown: rgb(158,33,76);
@@ -43,13 +44,6 @@ $grad_purple_to_green: linear-gradient(to bottom, $turrel_dark_purple, $turrel_b
   }
 }
 
-@keyframes waveUnderline {
-  0% { text-decoration-color: $turrel_blue_purple; }
-  20% { text-decoration-color: $turrel_purple; }
-  50% { text-decoration-color: $turrel_pink; }
-  80% { text-decoration-color: $turrel_blue; }
-  100% { text-decoration-color: $turrel_blue_purple; }
-}
 
 @keyframes darken {
   0% {
@@ -97,9 +91,9 @@ h1{
   text-align: center;
   font-size: 13vh;
   font-family: "Noto Sans Mono";
-  color: $turrel_black;
+  color: white;
   opacity: 100%;
-  text-shadow: 5px 6px 8px $color8;
+  text-shadow: 0 2px 5px aquamarine;
   transition: color 3s ease-in, color 1s ease-out, text-shadow 3s ease-in, text-shadow 1s ease-out, opacity 3s ease-in, opacity 1s ease-out;
 }
 
@@ -246,18 +240,21 @@ body {
 }
 a{
   margin-left: 10vw;
-  text-decoration: underline;
-  text-decoration-color: $grad_lime_to_azul;
-  text-decoration-style: wavy;
   color: $my_white;
   font-size: 11vh;
   font-family: 'Pathway Gothic One';
-  text-shadow: 5px 6px 2px $turrel_blue_purple;
-  animation: waveUnderline 10s linear infinite alternate;
+  text-shadow: 3px 1px 2px rgba(0,0,0,0.5);
+  text-decoration-color: $turrel_black;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+
 }
 ul{
   list-style: none;
+  text-decoration: none;
+  text-decoration-line: none;
 }
 a:hover{
   color: $turrel_pink;
+  text-decoration-color: $emerald;
 }
