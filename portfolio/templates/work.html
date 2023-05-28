@@ -1,22 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
-<script src="/js/lava_lamp.js" type="module"></script>
+<head>
 <link rel="stylesheet" href="{{ get_url(path="work.css") }}">
-<div class="background"></div>
-  <h1 class="title">
-    {{ section.title }}
-  </h1>
-  <ul>
-    <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->  
-    {% for page in section.pages %}
-    <li>
-      <a href="{{ page.permalink | safe }}">{{ page.title }}
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
+</head>
+<div id="background"></div>
+<h1 class="title">
+  {{ section.title }}
+</h1>
+<ul>
+  <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->
+  {% for page in section.pages %}
+  <li>
+    <a href="{{ page.permalink | safe }}">{{ page.title }}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+<script src="/js/lava_lamp.js" type="module"></script>
 
-  {% endblock content %}
+{% endblock content %}
