@@ -1,6 +1,5 @@
-import * as p5 from "../node_modules/p5/lib/p5.js";
-
-class Blob {
+import p5 from "p5";
+export class Blob {
   x: number;
   y: number;
   radius: number;
