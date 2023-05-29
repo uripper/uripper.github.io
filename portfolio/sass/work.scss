@@ -3,11 +3,11 @@
 $fadeintime: .5s;
 $background_color: #7BE9FF;
 
-$header_text_color: #FD9B9D;
+$header_text_color: #FF5666;
 $header_box_color: #43284C;
 
-$body_text_color: #9FE13C;
-$body_box_color: #8A2428;
+$body_text_color: #97FF4A;
+$body_box_color: #D6FF61;
 
 
 $header_font: 'Rajdhani';
@@ -52,7 +52,7 @@ h1 {
   margin-left: 0%;
   margin-right: 0%;
   z-index: 1;
-  text-shadow: white 4px 2px 2px;
+  text-shadow: $header_box_color 2px 2px 2px;
   animation: fadein $fadeintime ease-in-out;
   transition: color $fadeintime ease-in, color 1s ease-out, text-shadow $fadeintime ease-in, text-shadow 1s ease-out, opacity 3s ease-in, opacity 1s ease-out; // Add this line
 }
@@ -62,7 +62,7 @@ a {
   justify-content: left;
   align-items: left;
   margin: auto;
-  text-shadow: white 1px 2px 1px;
+  text-shadow: $body_box_color 1px 2px 1px;
   font-family: $body_font;
   color: $body_text_color;
   font-size: $link-size;

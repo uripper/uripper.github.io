@@ -20,28 +20,62 @@ window.onload = function() {
         p.setup = function() {
             let canvas = p.createCanvas(p.windowWidth, p.windowHeight);
             canvas.parent('background');
+            p.noiseDetail(8, 0.65);
+
 
             abstract_shapeGenerator = createNewShape();
         };
-
+        var gradient_colors = [
+            "#0056C6",
+            "#0E1452",
+            "#1B78E1",
+            "#1D1C2F",
+            "#0072E4",
+            "#2E73FF",
+            "#40D1FF",
+            "#4AB7FF",
+            "#515180",
+            "#5FE5FF",
+            "#253791",
+            "#49B7FF",
+            "#3B64EA",
+        ];
+        
         p.draw = function() {
-            p.background(0, 10); // Add some transparency to create fading effect
+            p.background(0);
+        
+            // Draw Perlin noise background
+            for (let y = 0; y < p.height; y++) {
+                let noiseVal = p.noise(y * 0.001, p.frameCount * 0.0005);
+                let colorIndex = Math.floor(noiseVal * gradient_colors.length);
+                colorIndex = p.constrain(colorIndex, 0, gradient_colors.length - 1);
+        
+                let colorStart = p.color(gradient_colors[colorIndex] + '80');
+                let colorEnd = p.color(gradient_colors[(colorIndex + 1) % gradient_colors.length] + '80');
+                let lerpVal = (noiseVal * gradient_colors.length) - colorIndex;
+        
+                let c = p.lerpColor(colorStart, colorEnd, lerpVal);
+        
+                p.stroke(c);
+                p.line(0, y, p.width, y);
+            }
 
+        
             // Slowly shift and change the abstract shape
             if (p.frameCount % 300 === 0) {
                 abstract_shapeGenerator.shiftShape();
                 abstract_shapeGenerator.changeShape();
             }
-
+        
             abstract_shapeGenerator.move();
             abstract_shapeGenerator.show();
-
+        
             // If the shape is out of bounds, create a new one
             if (abstract_shapeGenerator.y < -abstract_shapeGenerator.r) {
                 abstract_shapeGenerator = createNewShape();
             }
         };
-
+        
         function createNewShape() {
             let x = p.width / 2;
             let y = p.height;
