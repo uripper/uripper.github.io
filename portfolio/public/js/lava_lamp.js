@@ -5,6 +5,12 @@ var color_palette = [
     "#f0ffa0",
     "#c8dcff",
     "#f0c8ff",
+    "#9A83C9",
+    "#9D1A1C",
+    "#F1493B",
+    "#84231D",
+    "#FFEC3F",
+
 ];
 
 window.onload = function() {
