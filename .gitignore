@@ -1,0 +1,4 @@
+.vscode
+.jekyll-cache
+.linthtmlrc.yaml
+node_modules
