@@ -34,16 +34,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
             open(current_website + "/home", "_self");
         }, 1000); // Delay the page navigation by 3 seconds
     });
-function randomColor() {
-    var red = Math.floor(Math.random() * 256);
-    var green = Math.floor(Math.random() * 256);
-    var blue = Math.floor(Math.random() * 256);
-    var invert_red = 255 - red;
-    var invert_green = 255 - green;
-    var invert_blue = 255 - blue;
+    button.addEventListener("touchstart", function( event ) {   
+        h1.style.color = color10;
+        h1.style.textShadow = "5px 5px 2px " + color3;
+        h1.style.opacity = "0.7";
+    });
 
-    color = "rgb(" + red + "," + green + "," + blue + ")";
-    invert_color = "rgb(" + invert_red + "," + invert_green + "," + invert_blue + ")";
-    return [color, invert_color];
-}
+    button.addEventListener("touchend", function( event ) {   
+        h1.style.color = color3;
+        h1.style.textShadow = "5px 5px 4px " + color10;
+        h1.style.opacity = "1";
+    });
+    
+    function randomColor() {
+        var red = Math.floor(Math.random() * 256);
+        var green = Math.floor(Math.random() * 256);
+        var blue = Math.floor(Math.random() * 256);
+        var invert_red = 255 - red;
+        var invert_green = 255 - green;
+        var invert_blue = 255 - blue;
+
+        color = "rgb(" + red + "," + green + "," + blue + ")";
+        invert_color = "rgb(" + invert_red + "," + invert_green + "," + invert_blue + ")";
+        return [color, invert_color];
+    }
 });

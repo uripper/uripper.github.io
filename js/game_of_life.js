@@ -19,8 +19,8 @@ window.onload = function() {
         var cellSize = 10;
         var columns, rows;
         var grid, nextGrid;
-        var frameRate = 10; // Adjust this value to control the speed
-        var cellOpacity = 100; // Adjust this value to control the opacity
+        var frameRate = 10;
+        var cellOpacity = 100;
 
         p.setup = function() {
             let canvas = p.createCanvas(p.windowWidth, p.windowHeight);
@@ -44,7 +44,7 @@ window.onload = function() {
                     let y = j * cellSize;
 
                     if (grid[i][j] === 1) {
-                        let color = p.random(color_palette) + p.hex(cellOpacity, 2); // Set alpha value for opacity
+                        let color = p.random(color_palette) + p.hex(cellOpacity, 2);
                         p.fill(color);
                         p.noStroke();
                         p.rect(x, y, cellSize, cellSize);
