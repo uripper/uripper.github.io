@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://uripper.github.io/</loc>
+    </url>
+    <url>
+        <loc>https://uripper.github.io/home/</loc>
+    </url>
+    <url>
+        <loc>https://uripper.github.io/home/about/</loc>
+    </url>
+    <url>
+        <loc>https://uripper.github.io/home/projects/</loc>
+    </url>
+    <url>
+        <loc>https://uripper.github.io/work/</loc>
+    </url>
+    <url>
+        <loc>https://uripper.github.io/work/freelance/</loc>
+        <lastmod>2022-03-01</lastmod>
+    </url>
+    <url>
+        <loc>https://uripper.github.io/work/nightingale/</loc>
+        <lastmod>2023-03-01</lastmod>
+    </url>
+    <url>
+        <loc>https://uripper.github.io/work/rma/</loc>
+        <lastmod>2016-03-01</lastmod>
+    </url>
+</urlset>
