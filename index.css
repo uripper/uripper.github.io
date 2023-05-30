@@ -125,27 +125,27 @@ button {
     padding: 3.75vh;
     font-size: 7.5vh;
     font-family: "Prompt", sans-serif;
-    opacity: 50%;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
-    transition: opacity 3s ease-in, color 3s ease-in, background 3s ease-in, box-shadow 5s ease-in, opacity 1s ease-out, color 1s ease-out, background 1s ease-out, box-shadow 1s ease-out
+    transition: color 0.3s ease-in, background 0.3s ease-in, box-shadow 0.3s ease-in;
+    transform: translateY(0);
 }
 
 button:hover {
-    opacity: .7;
     color: #a71720;
     background: #110706;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2), 0 6px 1000px 0 #e2b68f
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2), 0 6px 1000px 0 #e2b68f;
+    transform: translateY(-2px);
+}
+
+button:active, button:focus {
+    color: #110706;
+    background: #a71720;
+    box-shadow: 0px 0px 20px #fff;
+    transform: translateY(2px);
 }
 
 button:not(:hover) {
     color: #c1ddc6;
     background: #423330;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19)
-}
-
-button:active {
-    color: #110706;
-    background: #a71720;
-    box-shadow: 0px 0px 20px #fff;
-    opacity: 100%
 }
