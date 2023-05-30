@@ -113,7 +113,6 @@ h1{
 }
 
 body {
-  margin: 0;
   margin-top: 0%;
   margin-left: 0%;
   background-size: cover;
@@ -269,13 +268,13 @@ a:hover{
   text-decoration-color: $emerald;
   animation: bounceText 2.5s ease-in-out infinite alternate;
 }
-ul{
+ul {
   position: absolute;
   display: block;
   list-style: none;
   text-decoration: none;
   text-decoration-line: none;
-
+  left: 15vw;
 }
 
 
