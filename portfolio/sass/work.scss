@@ -3,24 +3,22 @@
 $fadeintime: .5s;
 $background_color: #7BE9FF;
 
-$header_text_color: #FF5666;
-$header_box_color: #43284C;
+$header_text_color: #ca7df9;
+$header_box_color: #d5c3cb;
 
-$body_text_color: #97FF4A;
-$body_box_color: #D6FF61;
+$body_text_color: #6ede6a;
+$body_box_color: #ef27a6;
+
+$hover_color: #6cb8f6;
+
+$text_shadow: 1px 3px 2px #1b120e;
 
 
-$header_font: 'Rajdhani';
-$body_font: 'Righteous';
+$header_font: 'Monoton';
+$body_font: 'Koulen';
 
-$hover_opacity: 0.7;
-$hover_box_shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
-0 6px 1000px 0 $color3;
-$hover_color: $color6;
-$hover_background: $color5;
-$header_box_size: 3rem;
 $header_font_size: 3rem;
-$link-size: 1rem;
+$link-size: 1.5rem;
 
 :root{
   font-size: calc(max(3vh, 3vw));
@@ -35,6 +33,7 @@ body {
   background-color: black; // Set background color to black
   position: relative;
   margin-top: 0;
+  z-index: -1;
 }
 
 #background {
@@ -43,7 +42,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: -10;
   margin-top: 0;
   color: $background_color;
   background-color: black; // Set background color to black
@@ -73,6 +72,7 @@ h1 {
   margin-right: 0%;
   z-index: 1;
   text-shadow: $header_box_color 2px 2px 2px;
+  opacity: .9;
   transition: color $fadeintime ease-in, color 1s ease-out, text-shadow $fadeintime ease-in, text-shadow 1s ease-out, opacity 3s ease-in, opacity 1s ease-out;
 }
 
@@ -81,14 +81,15 @@ a {
   justify-content: left;
   align-items: left;
   margin: auto;
-  text-shadow: $body_box_color 1px 2px 1px;
   font-family: $body_font;
   color: $body_text_color;
   font-size: $link-size;
+  text-shadow: $text_shadow;
   z-index: 5;
+  opacity: .8;
 }
 a:hover{
-  color: $body_box_color;
+  color: $hover_color;
 }
 
 div {
@@ -105,8 +106,8 @@ ul {
 }
 li{
   text-align: left;
-  width: 15em;
   margin-right: 5%;
+  z-index: 5;
 }
 canvas {
   position: absolute;

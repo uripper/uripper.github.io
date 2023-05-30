@@ -74,6 +74,18 @@ $grad_purple_to_green: linear-gradient(to bottom, $turrel_dark_purple, $turrel_b
   }
 }
 
+@keyframes bounceText {
+  0% {
+    font-size: 9.5vh;
+    letter-spacing: 0vw;
+  }
+  100% {
+    font-size: 7.5vh;
+    letter-spacing: 0.5vw;
+  }
+}
+
+
 #fade-to-black {
   position: fixed; 
   top: 0; 
@@ -110,7 +122,6 @@ body {
   perspective: 1px;
   overflow-x: hidden;
   overflow-y: hidden;
-  position: relative;
   z-index: 1;
 }
 
@@ -119,7 +130,7 @@ body {
   top:0;
   left:0;
   bottom: 0;
-  height: 120vh;
+  height: 100vh;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -244,8 +255,6 @@ body {
   }
 }
 a{
-  margin-top: 12vh;
-  margin-left: 7vw;
   color: $my_gray;
   font-size: 8vh;
   font-family: $text_font_family;
@@ -255,12 +264,18 @@ a{
   text-decoration-thickness: 2px;
 
 }
-ul{
-  list-style: none;
-  text-decoration: none;
-  text-decoration-line: none;
-}
 a:hover{
   color: $turrel_pink;
   text-decoration-color: $emerald;
+  animation: bounceText 2.5s ease-in-out infinite alternate;
 }
+ul{
+  position: absolute;
+  display: block;
+  list-style: none;
+  text-decoration: none;
+  text-decoration-line: none;
+
+}
+
+
