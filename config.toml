@@ -1,8 +1,0 @@
-title = "Portfolio"
-description = "Portfolio"
-base_url = "https://uripper.github.io/portfolio"
-compile_sass = true
-highlight_code = true
-build_search_index = true
-generate_feed = true
-default_language = "en"

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Portfolio</title>
+  <link rel="icon" href="https://uripper.github.io/images/icon_transparent.png">
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      
+<head>
+  <link rel="stylesheet" href="https://uripper.github.io/home.css">
+
+</head>
+<body>
+  <h1 class="title"> 
+  <span data-text="Portfolio">
+    Portfolio
+  </span>
+  </h1>
+  <ul>
+    <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->
+    <li><a href="https://uripper.github.io/work"> Work </a></li>
+    
+    <li><a href="https://uripper.github.io/home/about/">About</a></li>
+    
+    <li><a href="https://uripper.github.io/home/projects/">Projects</a></li>
+    
+  </ul>
+  <script>
+    function getOffset() {
+      const header = document.querySelector('[data-text="Portfolio"]');
+      console.log(header)
+      const list = document.querySelector('ul');
+      const headerOffset = header.getBoundingClientRect().left;
+      console.log(headerOffset)
+      const parentOffset = header.offsetParent.getBoundingClientRect().left;
+  
+      list.style.left = `${headerOffset - parentOffset - 50}px`;
+    }
+  
+    window.addEventListener('DOMContentLoaded', getOffset);
+    window.addEventListener('resize', getOffset);
+    window.addEventListener('scroll', getOffset);
+  </script>
+  
+  
+  
+  <!-- content for the second layer goes here -->
+  <!-- content for the third layer goes here -->
+
+  
+  
+  <div class="layer-container">
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+  </div>
+</body>
+
+    </div>
+  </section>
+</body>
+
+</html>
