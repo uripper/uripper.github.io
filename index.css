@@ -130,7 +130,7 @@ button {
 }
 
 button:hover {
-    color: #a717f0;
+    color: #000;
     background: #f10706;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2), 0 6px 1000px 0 #e2b68f;
 }
