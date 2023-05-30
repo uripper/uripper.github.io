@@ -43,7 +43,7 @@ body {
 h1 {
     position: relative;
     font-family: "Monoton";
-    color: #ca7df9;
+    color: #B1839F;
     font-size: 3rem;
     text-align: center;
     margin-top: 0%;
@@ -61,7 +61,7 @@ a {
     align-items: left;
     margin: auto;
     font-family: "Koulen";
-    color: #6ede6a;
+    color: #35665D;
     font-size: 1.5rem;
     text-shadow: 1px 3px 2px #1b120e;
     z-index: 5;
