@@ -1,16 +1,16 @@
 @import "_extend.scss";
 
-$text_color: #80FFCC;
+$text_color: #a3b1ae;
 $background_color: #050000;
 $header_color: #b5d1cc;
 $accent_color: #ABF5ED;
-$shadow_color: #ff3319;
+$shadow_color: #3b2320;
 
-$font_family: 'Press Start 2P', sans-serif;
-$header_font_family: 'Press Start 2P', sans-serif;
+$header_font_family: 'Didact Gothic', sans-serif;
+$font_family: 'Advent Pro', sans-serif;
 
 
-@keyframes fadein {
+@keyframes fade_in {
   from {
     z-index: 99999;
     opacity: 1;
@@ -29,7 +29,7 @@ $header_font_family: 'Press Start 2P', sans-serif;
   height: 100%; 
   z-index: -1; 
   background: black;
-  animation: fadein 2s;
+  animation: fade_in 2s;
   opacity: 0;
   transition: opacity 1s ease-in-out, z-index 0.1ms ease-in-out;
 }
@@ -39,7 +39,7 @@ h1{
   justify-content: left;
   align-items: top;
   text-align: center;
-  font-size: 4vw;
+  font-size: 7vw;
   font-family: $header_font_family;
   color: $header_color;
   opacity: 100%;
@@ -57,7 +57,7 @@ body {
   z-index: 1;
   overflow-x: hidden;
   color: $text_color;
-  font-size: 1vw;
+  font-size: 2.5vw;
   font-family: $font_family;
 
 }

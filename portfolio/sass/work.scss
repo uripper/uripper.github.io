@@ -26,10 +26,16 @@ $link-size: 1rem;
   font-size: calc(max(3vh, 3vw));
 }
 
-// body {
-//   background-color: $background_color;
-//   position: relative; // Add this
-// }
+body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background-color: black; // Set background color to black
+  position: relative;
+  margin-top: 0;
+}
 
 #background {
   position: absolute;
@@ -38,10 +44,23 @@ $link-size: 1rem;
   width: 100%;
   height: 100%;
   z-index: -1;
-  overflow: hidden;
+  margin-top: 0;
   color: $background_color;
+  background-color: black; // Set background color to black
+  opacity: 0; // Set initial opacity to 0
+  animation: fadein $fadeintime ease-in-out forwards; // Use forwards to keep final state of animation
 }
 
+@keyframes fadein {
+  from {
+    opacity: 0;
+    background-color: black; // Set initial background color to black
+  }
+  to {
+    opacity: 1;
+    background-color: $background_color; // Set final background color to desired color
+  }
+}
 
 h1 {
   position: relative;
@@ -49,12 +68,12 @@ h1 {
   color: $header_text_color;
   font-size: $header_font_size;
   text-align: center;
+  margin-top: 0%;
   margin-left: 0%;
   margin-right: 0%;
   z-index: 1;
   text-shadow: $header_box_color 2px 2px 2px;
-  animation: fadein $fadeintime ease-in-out;
-  transition: color $fadeintime ease-in, color 1s ease-out, text-shadow $fadeintime ease-in, text-shadow 1s ease-out, opacity 3s ease-in, opacity 1s ease-out; // Add this line
+  transition: color $fadeintime ease-in, color 1s ease-out, text-shadow $fadeintime ease-in, text-shadow 1s ease-out, opacity 3s ease-in, opacity 1s ease-out;
 }
 
 a {
@@ -88,4 +107,15 @@ li{
   text-align: left;
   width: 15em;
   margin-right: 5%;
+}
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
