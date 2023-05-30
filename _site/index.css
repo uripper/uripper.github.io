@@ -12,50 +12,6 @@
     }
 }
 
-@keyframes text_pulsate {
-    0% {
-        color: #e2b68f;
-        text-shadow: 5px 2px 2px #110706
-    }
-
-    25% {
-        color: #a71720;
-        text-shadow: 2px 2px 5px #423330
-    }
-
-    50% {
-        color: #110706;
-        text-shadow: 2px 5px 2px #e2b68f
-    }
-
-    75% {
-        color: #c1ddc6;
-        text-shadow: 5px 2px 2px #8e644c
-    }
-
-    100% {
-        color: #e2b68f;
-        text-shadow: 5px 2px 2px #110706
-    }
-}
-
-@keyframes shadow_split {
-    0% {
-        font-size: 80px;
-        text-shadow: 10px, 10px, 10px, rgba(226, 182, 143, .87)
-    }
-
-    50% {
-        font-size: 100px;
-        text-shadow: 2px, 5px, 5px, rgba(226, 182, 143, .87)
-    }
-
-    100% {
-        font-size: 80px;
-        text-shadow: 0px, 0px, 0px, 5px
-    }
-}
-
 @keyframes fade_in {
     from {
         z-index: 99999;
