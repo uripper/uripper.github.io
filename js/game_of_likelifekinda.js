@@ -12,11 +12,11 @@ let rgbColorPalette = color_palette.map(color => {
 
 window.onload = function() {
     new p5(function(p) {
-        var cellSize = 5;
+        var cellSize = 7;
         var columns, rows;
         var grid;
-        var framerateValue = 60;
-        var cellOpacity = 65;
+        var framerateValue = 40;
+        var cellOpacity = 25;
 
         p.setup = function() {
             let canvas = p.createCanvas(p.windowWidth, p.windowHeight);
@@ -60,13 +60,9 @@ window.onload = function() {
             );
         }
 
-        let lastLivingCells = 0;
         let livingCells = 0;
-        let sameStateCount= 0;
-        let sameStateTolerance = 20;
         
         function updateGrid() {
-            livingCells = 0;
             let dead = 0;
             let alive = 1;
             let min = 2;
@@ -79,24 +75,13 @@ window.onload = function() {
                     if (cell.state === dead && neighbors === max) {
                         cell.state = alive;
                         cell.color = rgbColorPalette[p.floor(p.random(rgbColorPalette.length))];
-                        livingCells++;
                     } else if (cell.state === alive && (neighbors < min || neighbors > max)) {
                         cell.state = dead;
-                        livingCells++;
                     }
                 }
             }
 
-            if (livingCells === lastLivingCells) {
-                sameStateCount++;
-                if (sameStateCount >= sameStateTolerance) {
-                    grid = createRandomGrid();
-                    sameStateCount = 0;
-                }
-            } else {
-                lastLivingCells = livingCells;
-                sameStateCount = 0;
-            }
+
         }
 
         function countNeighbors(x, y) {
