@@ -1,4 +1,20 @@
-@keyframes fade_in {
+:root {
+    --base-font-size: calc(1.5vw + 1.5vh + .5vmin);
+}
+html {
+    font-size: var(--base-font-size);
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    button {
+        padding: .25rem;
+        font-size: .125rem;
+    }
+}@keyframes fade_in {
     from {
         z-index: 99999;
         opacity: 1
@@ -29,14 +45,26 @@ h1 {
     justify-content: left;
     align-items: top;
     text-align: center;
-    font-size: 7vw;
+    font-size: 2rem;
     font-family: "Didact Gothic", sans-serif;
     color: #b5d1cc;
     opacity: 100%;
     text-shadow: 1px 1px 1px #3b2320;
     transition: color 3s ease-in, color 1s ease-out, text-shadow 3s ease-in, text-shadow 1s ease-out, opacity 3s ease-in, opacity 1s ease-out
 }
-
+h2 {
+    margin-top: 0%;
+    background-size: cover;
+    background-position: top;
+    background-color: #050000;
+    position: relative;
+    text-shadow: 1px 3px 2px #3b2320;
+    z-index: 1;
+    overflow-x: hidden;
+    color: #a3b1ae;
+    font-size: .65rem;
+    font-family: "Advent Pro", sans-serif
+}
 body {
     margin-top: 0%;
     background-size: cover;
@@ -47,6 +75,6 @@ body {
     z-index: 1;
     overflow-x: hidden;
     color: #a3b1ae;
-    font-size: 2.5vw;
+    font-size: .5rem;
     font-family: "Advent Pro", sans-serif
 }
