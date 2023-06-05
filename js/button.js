@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         fadeToBlack.style.zIndex = "9999";
         fadeToBlack.style.opacity = "100%";
         setTimeout(function() {
-            open("/home");
+            location.href = "/home";
         }, 1000); // Delay the page navigation by 3 seconds
     });
     button.addEventListener("touchstart", function( event ) {   
