@@ -5,6 +5,16 @@ html {
     font-size: var(--base-font-size);
 }
 
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    button {
+        padding: 1rem;
+        font-size: 2rem;
+    }
+}
 
 @keyframes pulse {
     0% {
@@ -50,13 +60,29 @@ html {
     top: 0;
     left: 0;
     width: 100%;
-    height: 150%;
+    height: 100%;
     z-index: -1;
     animation: pulse 30000s linear infinite;
     background: radial-gradient(ellipse, #000, #7b1113);
     overflow: hidden;
-    opacity: 100%
-}
+    opacity: 100%;
+  }
+  
+  @media (min-aspect-ratio: 1/1) {
+    /* If the viewport is wider than it is tall */
+    .background {
+      height: 100%;
+      width: 150%;
+    }
+  }
+  
+  @media (max-aspect-ratio: 1/1) {
+    /* If the viewport is taller than it is wide */
+    .background {
+      height: 150%;
+      width: 100%;
+    }
+  }
 
 h1 {
     display: flex;
