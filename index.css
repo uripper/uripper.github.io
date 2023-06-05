@@ -11,8 +11,8 @@ html {
     }
     
     button {
-        padding: 1rem;
-        font-size: 2rem;
+        padding: .5rem;
+        font-size: 1rem;
     }
 }
 
@@ -113,8 +113,8 @@ button {
     background: #423330;
     color: #c1ddc6;
     border-radius: 300vh;
-    padding: 3.75rem;
-    font-size: 7.5rem;
+    padding: 3rem;
+    font-size: 3rem;
     font-family: "Prompt", sans-serif;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
     transition: color 0.3s ease-in, background 0.3s ease-in, box-shadow 0.3s ease-in;
