@@ -22,10 +22,9 @@ body {
     height: 100%;
     z-index: -10;
     margin-top: 0;
-    color: #7be9ff;
     background-color: #000;
     opacity: 0;
-    animation: fade_in .5s ease-in-out forwards
+    animation: fade_in .5s ease-in-out forwards;
 }
 
 @keyframes fade_in {
@@ -44,7 +43,7 @@ h1 {
     position: relative;
     font-family: "Monoton";
     color: #B1839F;
-    font-size: 3rem;
+    font-size: 6rem;
     text-align: center;
     margin-top: 0%;
     margin-left: 0%;
@@ -61,8 +60,8 @@ a {
     align-items: left;
     margin: auto;
     font-family: "Koulen";
-    color: #35665D;
-    font-size: 1.5rem;
+    color: #6ede6a;
+    font-size:3rem;
     text-shadow: 1px 3px 2px #1b120e;
     z-index: 5;
     opacity: .8

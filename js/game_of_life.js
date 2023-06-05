@@ -16,10 +16,10 @@ var color_palette = [
 
 window.onload = function() {
     new p5(function(p) {
-        var cellSize = 10;
+        var cellSize = 5;
         var columns, rows;
         var grid, nextGrid;
-        var frameRate = 10;
+        var framerateValue = 60;
         var cellOpacity = 100;
 
         p.setup = function() {
@@ -32,7 +32,7 @@ window.onload = function() {
             grid = createRandomGrid();
             nextGrid = createEmptyGrid();
 
-            p.frameRate(frameRate);
+            p.frameRate(framerateValue);
         };
 
         p.draw = function() {
@@ -44,8 +44,12 @@ window.onload = function() {
                     let y = j * cellSize;
 
                     if (grid[i][j] === 1) {
-                        let color = p.random(color_palette) + p.hex(cellOpacity, 2);
-                        p.fill(color);
+                        let color = p.random(color_palette);
+                        color = color.substring(1); // remove #
+                        let r = parseInt(color.substring(0, 2), 16);
+                        let g = parseInt(color.substring(2, 4), 16);
+                        let b = parseInt(color.substring(4, 6), 16);
+                        p.fill(r, g, b, cellOpacity);
                         p.noStroke();
                         p.rect(x, y, cellSize, cellSize);
                     }
@@ -56,46 +60,58 @@ window.onload = function() {
         };
 
         function createRandomGrid() {
-            let grid = new Array(columns);
-            for (let i = 0; i < columns; i++) {
-                grid[i] = new Array(rows);
-                for (let j = 0; j < rows; j++) {
-                    grid[i][j] = p.floor(p.random(2));
-                }
-            }
-            return grid;
+            return Array.from({ length: columns }, () =>
+                Array.from({ length: rows }, () => p.floor(p.random(2)))
+            );
         }
 
         function createEmptyGrid() {
-            let grid = new Array(columns);
-            for (let i = 0; i < columns; i++) {
-                grid[i] = new Array(rows);
-                for (let j = 0; j < rows; j++) {
-                    grid[i][j] = 0;
-                }
-            }
-            return grid;
+            return Array.from({ length: columns }, () => Array.from({ length: rows }, () => 0));
         }
-
+        let lastLivingCells = 0;
+        let livingCells = 0;
+        let sameStateCount= 0;
+        let sameStateTolerance = 20;
+        
         function updateGrid() {
+            livingCells = 0;
+            let dead = 0;
+            let alive = 1;
+            let min = 2;
+            let max = 3;
             for (let i = 0; i < columns; i++) {
                 for (let j = 0; j < rows; j++) {
                     let state = grid[i][j];
-                    let neighbors = countNeighbors(grid, i, j);
+                    let neighbors = Math.round(countNeighbors(grid, i, j));  
 
-                    if (state === 0 && neighbors === 3) {
-                        nextGrid[i][j] = 1;
-                    } else if (state === 1 && (neighbors < 2 || neighbors > 3)) {
-                        nextGrid[i][j] = 0;
+                    if (state === dead && neighbors === max) {
+                        nextGrid[i][j] = alive;
+                        livingCells++;
+                    } else if (state === alive && (neighbors < min || neighbors > max)) {
+                        nextGrid[i][j] = dead;
+                        livingCells++;
                     } else {
                         nextGrid[i][j] = state;
+                        if (state === alive) {
+                            livingCells++;
+                        }
                     }
                 }
             }
 
-            let temp = grid;
-            grid = nextGrid;
-            nextGrid = temp;
+            if (livingCells == lastLivingCells) {
+                sameStateCount++;
+                [grid, nextGrid] = [nextGrid, grid];
+                if(sameStateCount >= sameStateTolerance){
+                    grid = createRandomGrid();
+                    nextGrid = createEmptyGrid();
+                    sameStateCount = 0;
+                }
+            } else {
+                [grid, nextGrid] = [nextGrid, grid];
+                lastLivingCells = livingCells;
+                sameStateCount = 0;
+            }
         }
 
         function countNeighbors(grid, x, y) {
