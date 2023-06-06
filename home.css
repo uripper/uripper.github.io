@@ -48,18 +48,6 @@ html {
     transition: opacity 1s ease-in-out, z-index .1ms ease-in-out
 }
 
-h1 {
-    margin: 0;
-    justify-content: left;
-    align-items: top;
-    text-align: center;
-    font-size: 5rem;
-    font-family: "Monomaniac One", sans-serif;
-    color: #cfbef5;
-    opacity: 100%;
-    text-shadow: -4px 2px 1px #294e3e;
-    transition: color 3s ease-in, color 1s ease-out, text-shadow 3s ease-in, text-shadow 1s ease-out, opacity 3s ease-in, opacity 1s ease-out
-}
 
 body {
     margin-top: 0%;
@@ -213,13 +201,12 @@ body {
 a {
     color: #af9999;
     font-size: 2.5rem;
-    font-family: "Bebas Neue", sans-serif;
-    text-shadow: 3px 1px 2px #294e3e;
-    text-decoration-color: #294e3e;
+    font-family: "Oswald";
+    text-shadow: 12px 12px 25px rgba(8, 255, 148, .6);
+    text-decoration-color: #5e0000;
     text-decoration-line: underline;
     text-align: center;
-    justify-content: center;
-    text-decoration-thickness: 2px
+    text-decoration-thickness: .25rem;
 }
 
 a:hover {
