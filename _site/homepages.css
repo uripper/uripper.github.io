@@ -1,3 +1,9 @@
+:root {
+    --base-font-size: calc(1.5vw + 1.5vh + .5vmin);
+}
+html {
+    font-size: var(--base-font-size);
+}
 @keyframes fade_in {
     from {
         z-index: 99999;
@@ -28,7 +34,7 @@ h1 {
     justify-content: left;
     align-items: top;
     text-align: center;
-    font-size: 4vw;
+    font-size: 3.5rem;
     font-family: "Press Start 2P", sans-serif;
     color: #b5d1cc;
     opacity: 100%;
@@ -41,11 +47,12 @@ body {
     background-size: cover;
     background-position: top;
     background-color: #050000;
+    text-align: center;
     position: relative;
     text-shadow: 1px 3px 2px #ff3319;
     z-index: 1;
     overflow-x: hidden;
     color: #80ffcc;
-    font-size: 1vw;
+    font-size: 1.5rem;
     font-family: "Press Start 2P", sans-serif
 }

@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     var current_website = window.location.href;
 
     button.addEventListener("mouseover", function( event ) {   
+        h1.style.color = color10;
         h1.style.textShadow = "5px 5px 2px " + color3;
         h1.style.opacity = "0.7";
     });
@@ -30,7 +31,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         fadeToBlack.style.zIndex = "9999";
         fadeToBlack.style.opacity = "100%";
         setTimeout(function() {
-            open(current_website + "/home", "_self");
+            location.href = "/home";
         }, 1000); // Delay the page navigation by 3 seconds
     });
     button.addEventListener("touchstart", function( event ) {   

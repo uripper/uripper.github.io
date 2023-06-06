@@ -1,31 +1,8 @@
-@keyframes crtCrackle {
-    0% {
-        background-position: 0 0
-    }
-
-    100% {
-        background-position: 8px 2px
-    }
+:root {
+    --base-font-size: calc(1.5vw + 1.5vh + .5vmin);
 }
-
-@keyframes slideToBack {
-    from {
-        transform: translateZ(0px) scale(1)
-    }
-
-    to {
-        transform: translateZ(-900px) scale(0)
-    }
-}
-
-@keyframes lensEffect {
-    0% {
-        transform: perspective(500px) rotateY(0deg)
-    }
-
-    100% {
-        transform: perspective(500px) rotateY(-60deg)
-    }
+html {
+    font-size: var(--base-font-size);
 }
 
 @keyframes darken {
@@ -58,18 +35,6 @@
     }
 }
 
-@keyframes bounceText {
-    0% {
-        font-size: 9.5vh;
-        letter-spacing: 0vw
-    }
-
-    100% {
-        font-size: 7.5vh;
-        letter-spacing: .5vw
-    }
-}
-
 #fade-to-black {
     position: fixed;
     top: 0;
@@ -83,26 +48,11 @@
     transition: opacity 1s ease-in-out, z-index .1ms ease-in-out
 }
 
-h1 {
-    margin: 0;
-    justify-content: left;
-    align-items: top;
-    text-align: center;
-    font-size: 17vh;
-    font-family: "Monomaniac One", sans-serif;
-    color: #cfbef5;
-    opacity: 100%;
-    text-shadow: -4px 2px 1px #294e3e;
-    transition: color 3s ease-in, color 1s ease-out, text-shadow 3s ease-in, text-shadow 1s ease-out, opacity 3s ease-in, opacity 1s ease-out
-}
 
 body {
     margin-top: 0%;
     margin-left: 0%;
     background-size: cover;
-    background-position: top;
-    background-color: #060408;
-    perspective: 1px;
     overflow-x: hidden;
     overflow-y: hidden;
     z-index: 1
@@ -250,12 +200,13 @@ body {
 
 a {
     color: #af9999;
-    font-size: 8vh;
-    font-family: "Bebas Neue", sans-serif;
-    text-shadow: 3px 1px 2px #294e3e;
-    text-decoration-color: #294e3e;
+    font-size: 2.5rem;
+    font-family: "Oswald";
+    text-shadow: 12px 12px 25px rgba(8, 255, 148, .6);
+    text-decoration-color: #5e0000;
     text-decoration-line: underline;
-    text-decoration-thickness: 2px
+    text-align: center;
+    text-decoration-thickness: .25rem;
 }
 
 a:hover {
@@ -264,11 +215,10 @@ a:hover {
     animation: bounceText 2.5s ease-in-out infinite alternate
 }
 
-ul {
-    position: absolute;
-    display: block;
-    list-style: none;
-    text-decoration: none;
-    text-decoration-line: none;
-    left: 15vw
+li {
+    align-items: top;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
