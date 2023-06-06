@@ -1,3 +1,9 @@
+:root {
+    --base-font-size: calc(1.5vw + 1.5vh + .5vmin);
+}
+html {
+    font-size: var(--base-font-size);
+}
 @keyframes crtCrackle {
     0% {
         background-position: 0 0
@@ -58,18 +64,6 @@
     }
 }
 
-@keyframes bounceText {
-    0% {
-        font-size: 9.5vh;
-        letter-spacing: 0vw
-    }
-
-    100% {
-        font-size: 7.5vh;
-        letter-spacing: .5vw
-    }
-}
-
 #fade-to-black {
     position: fixed;
     top: 0;
@@ -88,7 +82,7 @@ h1 {
     justify-content: left;
     align-items: top;
     text-align: center;
-    font-size: 17vh;
+    font-size: 5rem;
     font-family: "Monomaniac One", sans-serif;
     color: #cfbef5;
     opacity: 100%;
@@ -102,7 +96,7 @@ body {
     background-size: cover;
     background-position: top;
     background-color: #060408;
-    perspective: 1px;
+    perspective: 1rem;
     overflow-x: hidden;
     overflow-y: hidden;
     z-index: 1
@@ -250,7 +244,7 @@ body {
 
 a {
     color: #af9999;
-    font-size: 8vh;
+    font-size: 2.5rem;
     font-family: "Bebas Neue", sans-serif;
     text-shadow: 3px 1px 2px #294e3e;
     text-decoration-color: #294e3e;

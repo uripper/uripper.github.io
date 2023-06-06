@@ -109,65 +109,113 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    background: rgb(38, 11, 38);
     height: 100vh;
     overflow-y: hidden;
     overflow-x: hidden;
     animation-fill-mode: backwards;
     font-family: "Prompt", sans-serif
 }
-
-.polygon-button {
+  
+a{
     position: relative;
-    background: rgba(175, 148, 59, 0.7);
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    font-size: 1.25rem;
-    font-family: "Prompt", sans-serif;
-    transition: color 0.3s ease-in;
-    outline: 1px solid black;
+    display: inline-block;
+    padding: 1rem 2rem;
+    color: #549e6a;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 1.5s;
+    letter-spacing: .25rem;
+    overflow: hidden;
+    margin-right: 50vw;
+    margin-left: 50vw;
+   
 }
-
-.polygon-button:hover {
-    background:rgba(5, 221, 198, .7);
-    opacity: .5;
+a:hover{
+    background: #549e6a;
+    color: #050801;
+    box-shadow: 0 0 5px #549e6a,
+                0 0 25px #549e6a,
+                0 0 50px #549e6a,
+                0 0 200px #549e6a;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
 }
-
-.polygon-button svg {
+a:nth-child(1){
+    filter: hue-rotate(270deg);
+}
+a:nth-child(2){
+    filter: hue-rotate(110deg);
+}
+a span{
     position: absolute;
+    display: block;
+}
+a span:nth-child(1){
     top: 0;
     left: 0;
-    z-index: -1;
-    fill: #423330;
-    transition: fill 0.3s ease-in;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#03f44b);
+    animation: animate1 1s linear infinite;
+}
+@keyframes animate1{
+    0%{
+        left: -100%;
+    }
+    50%,100%{
+        left: 100%;
+    }
+}
+a span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#84f403);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+@keyframes animate2{
+    0%{
+        top: -100%;
+    }
+    50%,100%{
+        top: 100%;
+    }
+}
+a span:nth-child(3){
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#47f403);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+@keyframes animate3{
+    0%{
+        right: -100%;
+    }
+    50%,100%{
+        right: 100%;
+    }
 }
 
-.polygon-button span {
-    position: relative;
-    z-index: 1;
-    padding: .5rem;
-    display: inline-block;
-    color: #635ae7;
-}
-.polygon-button:hover span {
-    position: relative;
-    z-index: 1;
-    padding: .5rem;
-    display: inline-block;
-    color: #0e0505;
-}
-.polygon-button:hover svg {
-    background: rgba(5, 20, 198, .5);
-    fill: #e62222;
-    opacity: .7;
 
+a span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#36ff04);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
 }
-
-.polygon-button:active svg, 
-.polygon-button:focus svg {
-    fill: #a71720;
-}
-
-.polygon-button:not(:hover) svg {
-    fill: #423330;
+@keyframes animate4{
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
 }
