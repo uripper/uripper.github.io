@@ -50,8 +50,6 @@ html {
 
 
 body {
-    margin-top: 0%;
-    margin-left: 0%;
     background-size: cover;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -216,8 +214,10 @@ a:hover {
 }
 
 li {
+    display: flex;
     align-items: top;
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
