@@ -4,35 +4,6 @@
 html {
     font-size: var(--base-font-size);
 }
-@keyframes crtCrackle {
-    0% {
-        background-position: 0 0
-    }
-
-    100% {
-        background-position: 8px 2px
-    }
-}
-
-@keyframes slideToBack {
-    from {
-        transform: translateZ(0px) scale(1)
-    }
-
-    to {
-        transform: translateZ(-900px) scale(0)
-    }
-}
-
-@keyframes lensEffect {
-    0% {
-        transform: perspective(500px) rotateY(0deg)
-    }
-
-    100% {
-        transform: perspective(500px) rotateY(-60deg)
-    }
-}
 
 @keyframes darken {
     0% {
@@ -264,5 +235,5 @@ ul {
     list-style: none;
     text-decoration: none;
     text-decoration-line: none;
-    left: 15vw
+    left: 15rem
 }
