@@ -2,6 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
+    width: 100%;
 }
 
 :root {
@@ -9,31 +10,6 @@ html, body {
 }
 html {
     font-size: var(--base-font-size);
-}
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-    
-    button {
-        padding: .25rem;
-        font-size: .125rem;
-    }
-}
-
-@keyframes pulse {
-    0% {
-        background-size: 0%
-    }
-
-    50% {
-        background-size: 500vh
-    }
-
-    100% {
-        background-size: 0%
-    }
 }
 
 @keyframes fade_in {
@@ -63,33 +39,6 @@ html {
     transition: opacity 1s ease-in-out, z-index .1ms ease-in-out
 }
 
-.background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    animation: pulse 30000s linear infinite;
-    background: radial-gradient(ellipse, #000, #7b1113);
-    opacity: 100%;
-  }
-  
-  @media (min-aspect-ratio: 1/1) {
-    /* If the viewport is wider than it is tall */
-    .background {
-      height: 100%;
-      width: 100%;
-    }
-  }
-  
-  @media (max-aspect-ratio: 1/1) {
-    /* If the viewport is taller than it is wide */
-    .background {
-      height: 100%;
-      width: 100%;
-    }
-  }
 
 h1 {
     display: flex;
@@ -109,7 +58,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: rgb(38, 11, 38);
+    background: rgb(78, 43, 78);
     height: 100vh;
     overflow-y: hidden;
     overflow-x: hidden;

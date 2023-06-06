@@ -217,6 +217,8 @@ a {
     text-shadow: 3px 1px 2px #294e3e;
     text-decoration-color: #294e3e;
     text-decoration-line: underline;
+    text-align: center;
+    justify-content: center;
     text-decoration-thickness: 2px
 }
 
@@ -226,12 +228,10 @@ a:hover {
     animation: bounceText 2.5s ease-in-out infinite alternate
 }
 
-ul {
-    position: absolute;
-    list-style: none;
-    text-decoration: none;
-    text-decoration-line: none;
-}
 li {
-    margin-left: 6rem;
+    align-items: top;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
