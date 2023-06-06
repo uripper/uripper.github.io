@@ -16,7 +16,7 @@ window.onload = function() {
         var columns, rows;
         var grid;
         var framerateValue = 40;
-        var cellOpacity = 25;
+        var cellOpacity = 55;
 
         p.setup = function() {
             let canvas = p.createCanvas(p.windowWidth, p.windowHeight);
@@ -59,8 +59,6 @@ window.onload = function() {
                 })
             );
         }
-
-        let livingCells = 0;
         
         function updateGrid() {
             let dead = 0;
